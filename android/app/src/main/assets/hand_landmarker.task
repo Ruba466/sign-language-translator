@@ -1,0 +1,31 @@
+package com.anonymous.signbridge.dev
+
+import android.content.Context
+import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
+import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarkerResult
+import com.google.mediapipe.tasks.core.BaseOptions
+import com.google.mediapipe.tasks.vision.core.RunningMode
+import android.graphics.Bitmap
+
+class HandLandmarkManager(context: Context) {
+
+    private var handLandmarker: HandLandmarker
+
+    init {
+        val baseOptions = BaseOptions.builder()
+            .setModelAssetPath("hand_landmarker.task")
+            .build()
+
+        val options = HandLandmarker.HandLandmarkerOptions.builder()
+            .setBaseOptions(baseOptions)
+            .setRunningMode(RunningMode.IMAGE)
+            .setNumHands(1)
+            .build()
+
+        handLandmarker = HandLandmarker.createFromOptions(context, options)
+    }
+
+    fun detect(bitmap: Bitmap): HandLandmarkerResult? {
+        return handLandmarker.detect(bitmap)
+    }
+}
