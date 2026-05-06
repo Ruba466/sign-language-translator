@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg:       #08090d;
+  --teal:     #00e6b4;
+  --teal-dim: rgba(0, 230, 180, 0.12);
+  --border:   rgba(0, 230, 180, 0.14);
+  --white:    #f0f4f8;
+  --muted:    #4a5568;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.translator {
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ───────────────────────────────────────────────── */
+.translator__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 9, 13, 0.92);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.translator__back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 18px;
+  color: #8896a8;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.translator__back:hover {
+  border-color: rgba(0, 230, 180, 0.4);
+  color: var(--teal);
+  background: var(--teal-dim);
+}
+.translator__back-arrow { font-size: 16px; }
+
+.translator__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.translator__brand-icon {
+  font-size: 20px;
+  filter: drop-shadow(0 0 6px rgba(0,230,180,0.4));
+}
+.translator__brand-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--teal);
+}
+
+.translator__live-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 60, 60, 0.25);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff6b6b;
+}
+.translator__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff4444;
+  box-shadow: 0 0 8px rgba(255,68,68,0.7);
+  animation: live-blink 1.4s ease infinite;
+}
+@keyframes live-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ─── Tab switcher ─────────────────────────────────────────── */
+.translator__tabs {
+  display: flex;
+  gap: 0;
+  padding: 12px 32px 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,9,13,0.6);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 71px;
+  z-index: 99;
+}
+
+.translator__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #4a5568;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: -1px;
+  letter-spacing: 0.3px;
+}
+.translator__tab:hover {
+  color: #8896a8;
+}
+.translator__tab-active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+.tab-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* ─── Main ─────────────────────────────────────────────────── */
+.translator__main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
