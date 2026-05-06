@@ -1,0 +1,37 @@
+{
+  "word_to_idx": {
+    "__UNKNOWN__": 0,
+    "bad": 1,
+    "eat": 2,
+    "friend": 3,
+    "good": 4,
+    "hello": 5,
+    "help": 6,
+    "no": 7,
+    "please": 8,
+    "sorry": 9,
+    "thanks": 10,
+    "water": 11,
+    "yes": 12
+  },
+  "idx_to_word": {
+    "0": "__UNKNOWN__",
+    "1": "bad",
+    "2": "eat",
+    "3": "friend",
+    "4": "good",
+    "5": "hello",
+    "6": "help",
+    "7": "no",
+    "8": "please",
+    "9": "sorry",
+    "10": "thanks",
+    "11": "water",
+    "12": "yes"
+  },
+  "sequence_length": 30,
+  "num_features": 126,
+  "test_accuracy": 0.9308176040649414,
+  "camera_flip": true,
+  "has_unknown": true
+}
